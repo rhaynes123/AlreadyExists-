@@ -14,7 +14,6 @@ A spec driven development based app that checks if an app name is already in use
 - SwiftUI + MVVM with async/await networking
 - URLSession for App Store Search API requests
 - Codable, Sendable models
-- ViewModels expose loading state, results, and AppError
 - Swift Testing for unit tests (no third-party frameworks)
 
 ---

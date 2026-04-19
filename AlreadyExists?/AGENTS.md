@@ -1,6 +1,5 @@
-
 # AGENTS.md
-# AlreadyExists — iOS App
+# AlreadyExists — iOS App/ MacOS App
 
 ## Project Overview
 See docs/SPEC.md for business context. See CONTRIBUTING.md for full technical spec.

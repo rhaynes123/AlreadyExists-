@@ -1,5 +1,5 @@
 # CONTRIBUTOR
-# AlreadyExists? — iOS App
+# AlreadyExists? — iOS App/ MacOS App
 Version: 1.0 | Status: Draft | Owner: Engineering
 
 ## Derived From
@@ -18,10 +18,15 @@ The app is a read-only iOS client that consumes an existing API to find out if a
 - Persistence:    SwiftData (local cache only)
 - Min iOS:        17.0
 - Networking:     URLSession with async/await
-- Architecture:   MVVM + Vertically Sliced Feature Folders
+- Architecture:   View/Models + Vertically Sliced Feature Folders as new Features become needed
 
 
 ---
+
+## Project Structure
+AlreadyExists?/
+    Models/ # All models (struct, classes, enums, etc.) should reside here.
+    Views/ # A new or existing views should be in a dedicated Views folder that will need to be created if it doesn't exist.
 
 
 ### Models
