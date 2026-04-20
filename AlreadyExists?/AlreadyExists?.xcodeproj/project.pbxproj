@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5525732C2F95B12D00ACA3AF /* docsPROJECT_REORGANIZATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 5525732B2F95B12D00ACA3AF /* docsPROJECT_REORGANIZATION.md */; };
+		5525732E2F95B13C00ACA3AF /* ModelsREADME.md in Resources */ = {isa = PBXBuildFile; fileRef = 5525732D2F95B13C00ACA3AF /* ModelsREADME.md */; };
+		552573302F95B14C00ACA3AF /* ViewsREADME.md in Resources */ = {isa = PBXBuildFile; fileRef = 5525732F2F95B14C00ACA3AF /* ViewsREADME.md */; };
+		552573322F95B17200ACA3AF /* docsACTION_REQUIRED.md in Resources */ = {isa = PBXBuildFile; fileRef = 552573312F95B17200ACA3AF /* docsACTION_REQUIRED.md */; };
+		552573342F95B1AD00ACA3AF /* docsREORGANIZATION_SUMMARY.md in Resources */ = {isa = PBXBuildFile; fileRef = 552573332F95B1AD00ACA3AF /* docsREORGANIZATION_SUMMARY.md */; };
+		552573362F95B1BF00ACA3AF /* docsQUICK_START_XCODE.md in Resources */ = {isa = PBXBuildFile; fileRef = 552573352F95B1BF00ACA3AF /* docsQUICK_START_XCODE.md */; };
 		553B3D9E2F959EE000A8DA0D /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 553B3D9D2F959EDD00A8DA0D /* CHANGELOG.md */; };
 		553B3DBA2F95A8F200A8DA0D /* BUILD_VERIFICATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 553B3DB92F95A8F200A8DA0D /* BUILD_VERIFICATION.md */; };
 		553B3DBC2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md in Resources */ = {isa = PBXBuildFile; fileRef = 553B3DBB2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md */; };
@@ -33,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5525732B2F95B12D00ACA3AF /* docsPROJECT_REORGANIZATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = docsPROJECT_REORGANIZATION.md; sourceTree = "<group>"; };
+		5525732D2F95B13C00ACA3AF /* ModelsREADME.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ModelsREADME.md; sourceTree = "<group>"; };
+		5525732F2F95B14C00ACA3AF /* ViewsREADME.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ViewsREADME.md; sourceTree = "<group>"; };
+		552573312F95B17200ACA3AF /* docsACTION_REQUIRED.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = docsACTION_REQUIRED.md; sourceTree = "<group>"; };
+		552573332F95B1AD00ACA3AF /* docsREORGANIZATION_SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = docsREORGANIZATION_SUMMARY.md; sourceTree = "<group>"; };
+		552573352F95B1BF00ACA3AF /* docsQUICK_START_XCODE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = docsQUICK_START_XCODE.md; sourceTree = "<group>"; };
 		553B3D9D2F959EDD00A8DA0D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		553B3DB92F95A8F200A8DA0D /* BUILD_VERIFICATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUILD_VERIFICATION.md; sourceTree = "<group>"; };
 		553B3DBB2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DOCS_UPDATES_SUMMARY.md; sourceTree = "<group>"; };
@@ -106,6 +118,12 @@
 				55C6B3462F94710C0021FDF9 /* Products */,
 				553B3DB92F95A8F200A8DA0D /* BUILD_VERIFICATION.md */,
 				553B3DBB2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md */,
+				5525732B2F95B12D00ACA3AF /* docsPROJECT_REORGANIZATION.md */,
+				5525732D2F95B13C00ACA3AF /* ModelsREADME.md */,
+				5525732F2F95B14C00ACA3AF /* ViewsREADME.md */,
+				552573312F95B17200ACA3AF /* docsACTION_REQUIRED.md */,
+				552573332F95B1AD00ACA3AF /* docsREORGANIZATION_SUMMARY.md */,
+				552573352F95B1BF00ACA3AF /* docsQUICK_START_XCODE.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,9 +260,15 @@
 			files = (
 				55C6B3702F9471300021FDF9 /* README.md in Resources */,
 				553B3DBC2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md in Resources */,
+				552573362F95B1BF00ACA3AF /* docsQUICK_START_XCODE.md in Resources */,
 				553B3DBA2F95A8F200A8DA0D /* BUILD_VERIFICATION.md in Resources */,
+				552573322F95B17200ACA3AF /* docsACTION_REQUIRED.md in Resources */,
+				552573302F95B14C00ACA3AF /* ViewsREADME.md in Resources */,
+				552573342F95B1AD00ACA3AF /* docsREORGANIZATION_SUMMARY.md in Resources */,
 				55C6B3742F9472EF0021FDF9 /* AGENTS.md in Resources */,
 				55C6B3722F9471510021FDF9 /* CONTRIBUTING.md in Resources */,
+				5525732E2F95B13C00ACA3AF /* ModelsREADME.md in Resources */,
+				5525732C2F95B12D00ACA3AF /* docsPROJECT_REORGANIZATION.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

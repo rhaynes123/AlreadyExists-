@@ -24,18 +24,50 @@ The app is a read-only iOS client that consumes an existing API to find out if a
 ---
 
 ## Project Structure
+
+⚠️ **CRITICAL: Swift Source Files MUST NOT be placed in the `docs/` folder!**
+
+```
 AlreadyExists?/
-    Models/ # All models (struct, classes, enums, etc.) should reside here.
-    Views/ # A new or existing views should be in a dedicated Views folder that will need to be created if it doesn't exist.
+├── AlreadyExists_App.swift          # Main app entry point
+├── Models/                          # All models, services, ViewModels
+│   ├── AppError.swift              # Error definitions
+│   ├── AppStoreSearchResult.swift  # API response models
+│   ├── AppStoreService.swift       # Network service layer
+│   └── AppSearchViewModel.swift    # ViewModels
+├── Views/                           # All SwiftUI views
+│   ├── ContentView.swift           # Main views
+│   └── AppResultRow.swift          # Reusable view components
+└── docs/                            # Documentation ONLY (NO .swift files)
+    ├── SPEC.md
+    ├── CONTRIBUTING.md
+    ├── AGENTS.md
+    ├── IMPLEMENTATION.md
+    └── CHANGELOG.md
+```
 
+### ⛔ DO NOT:
+- ❌ Create Swift files in `docs/` folder
+- ❌ Create Swift files with prefixed names like `ModelsAppError.swift`
+- ❌ Create Swift files with prefixed names like `ViewsContentView.swift`
 
-### Models
+### ✅ DO:
+- ✅ Place models in `Models/` folder with simple names: `AppError.swift`
+- ✅ Place views in `Views/` folder with simple names: `ContentView.swift`
+- ✅ Place documentation in `docs/` folder with `.md` extension
+
+### Models Folder (`Models/`)
 - All models are Swift structs, Codable, Sendable
+- ViewModels (ending in `ViewModel`) go here
+- Services (ending in `Service`) go here
+- Protocols that define service contracts go here
 - Date fields use ISO8601DateFormatter, never assume locale
 - Amounts are Decimal, never Double or Float
 
-### Views
-- All views should include a preview
+### Views Folder (`Views/`)
+- All SwiftUI views go here
+- All views should include a `#Preview`
+- Keep views focused and composable
 
 ### Error Handling
 - Define errors as enums conforming to LocalizedError
@@ -117,6 +149,8 @@ xcodebuild -scheme "AlreadyExists?" -destination 'platform=iOS Simulator,name=iP
 
 ### New File Checklist
 When adding a new Swift file:
+- [ ] **File is in correct folder** (`Models/` or `Views/`, NEVER `docs/`)
+- [ ] **File has correct name** (e.g., `AppError.swift`, NOT `ModelsAppError.swift`)
 - [ ] File added to correct target (App or Tests)
 - [ ] All required imports present
 - [ ] File compiles individually (`Cmd+B`)

@@ -5,6 +5,66 @@
 - Any major changes such as new features or additions should be logged here
 ---
 
+## [1.0.1] - 2026-04-19
+
+### Fixed - Project Organization
+- 🔧 **Reorganized file structure**: Moved all Swift files to proper folders
+  - All models, services, and ViewModels now in `Models/` folder
+  - All SwiftUI views now in `Views/` folder
+  - Removed incorrectly named files (e.g., `ModelsAppError.swift` → `Models/AppError.swift`)
+- 🔧 **Updated ContentView**: Removed embedded `AppResultRow`, now uses separate file
+
+### Changed - Documentation
+- 📝 **CONTRIBUTING.md**: Added critical file organization rules
+  - Added visual file structure tree
+  - Added DO/DON'T lists for file placement
+  - Enhanced new file checklist with folder verification
+- 📝 **AGENTS.md**: Added file organization section
+  - Added critical warning about `docs/` folder (no Swift files)
+  - Added examples of correct vs. wrong file paths
+  - Updated file creation checklist with folder verification
+  - Enhanced common pitfalls table
+- 📝 **BUILD_VERIFICATION.md**: Added file organization rules
+  - Added correct vs. wrong file paths examples
+  - Added folder verification to new file checklist
+
+### Project Structure (Updated)
+```
+AlreadyExists?/
+├── AlreadyExists_App.swift          # Main app entry point
+├── Models/                          # ✅ All models, services, ViewModels
+│   ├── AppError.swift
+│   ├── AppStoreSearchResult.swift
+│   ├── AppStoreService.swift
+│   └── AppSearchViewModel.swift
+├── Views/                           # ✅ All SwiftUI views
+│   ├── ContentView.swift
+│   └── AppResultRow.swift
+└── docs/                            # ✅ Documentation ONLY (.md files)
+    ├── SPEC.md
+    ├── CONTRIBUTING.md
+    ├── AGENTS.md
+    ├── BUILD_VERIFICATION.md
+    ├── IMPLEMENTATION.md
+    └── CHANGELOG.md
+```
+
+### Removed
+- ❌ `ModelsAppError.swift` (moved to `Models/AppError.swift`)
+- ❌ `ModelsAppStoreSearchResult.swift` (moved to `Models/AppStoreSearchResult.swift`)
+- ❌ `ModelsAppStoreService.swift` (moved to `Models/AppStoreService.swift`)
+- ❌ `ModelsAppSearchViewModel.swift` (moved to `Models/AppSearchViewModel.swift`)
+- ❌ `ViewsAppResultRow.swift` (moved to `Views/AppResultRow.swift`)
+- ❌ Embedded `AppResultRow` from `ContentView.swift`
+
+### Impact
+- ✅ Cleaner project structure
+- ✅ Easier navigation in Xcode
+- ✅ Prevents future file organization mistakes
+- ✅ Documentation now explicitly prevents Swift files in `docs/`
+
+---
+
 ## [1.0.0] - 2026-04-19
 
 ### Added - Core Features

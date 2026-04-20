@@ -27,6 +27,8 @@ Cmd+R
 
 When creating a new Swift file, verify ALL of these:
 
+- [ ] **File is in correct folder** (`Models/` or `Views/`, NEVER `docs/`)
+- [ ] **File has simple name** (`AppError.swift`, NOT `ModelsAppError.swift`)
 - [ ] **File visible in Xcode Project Navigator** (left sidebar)
 - [ ] **Target Membership set correctly**
   - App files → "AlreadyExists?" target
@@ -35,6 +37,29 @@ When creating a new Swift file, verify ALL of these:
 - [ ] **File compiles** (Cmd+B shows no errors)
 - [ ] **No warnings** (Xcode warning count = 0)
 - [ ] **Tests added** (for Models/ViewModels/Services)
+
+---
+
+## 📁 File Organization Rules
+
+### ✅ Correct File Paths
+```
+Models/AppError.swift              ✅ Model in Models folder
+Models/AppStoreService.swift       ✅ Service in Models folder
+Models/AppSearchViewModel.swift    ✅ ViewModel in Models folder
+Views/ContentView.swift            ✅ View in Views folder
+Views/AppResultRow.swift           ✅ View component in Views folder
+docs/SPEC.md                       ✅ Documentation in docs folder
+```
+
+### ❌ Wrong File Paths
+```
+docs/AppError.swift                ❌ Swift files don't belong in docs/
+ModelsAppError.swift               ❌ Don't prefix with folder name
+ViewsContentView.swift             ❌ Don't prefix with folder name
+AppError.swift (at root)           ❌ Should be in Models/ folder
+ContentView.swift (at root)        ❌ Should be in Views/ folder
+```
 
 ---
 

@@ -11,16 +11,48 @@ See docs/SPEC.md for business context. See CONTRIBUTING.md for full technical sp
 - **VERIFY BUILDS IMMEDIATELY**: After creating or modifying files, check for build errors with `Cmd+B`
 - **Check all required imports**: Use the "Required Imports by File Type" table in CONTRIBUTING.md
 - **Verify target membership**: Ensure new files are added to the correct Xcode target
+- **Place files in correct folders**: `Models/` for models/services/ViewModels, `Views/` for SwiftUI views
 - Run tests (`Cmd+U`) after implementation
 
 ---
 
 ## What NOT to Do
-- Do not use UserDefaults for anything sensitive
+- ❌ **Do NOT create Swift files in `docs/` folder** — docs is for `.md` files ONLY
+- ❌ **Do NOT use prefixed names** like `ModelsAppError.swift` or `ViewsContentView.swift`
+- ❌ Do not use UserDefaults for anything sensitive
 - **Do not introduce Combine** — EXCEPTION: SwiftUI ViewModels with @Published MUST import Combine (required by Apple frameworks)
 - Do not create God ViewModels — one ViewModel per feature screen
 - Do not skip error handling with try? unless explicitly justified in a comment
 - **Do not assume files are in targets** — when creating new files, verify they compile
+
+---
+
+## ⚠️ CRITICAL: File Organization Rules
+
+### Correct File Paths
+```
+✅ CORRECT:
+Models/AppError.swift
+Models/AppStoreService.swift
+Models/AppSearchViewModel.swift
+Views/ContentView.swift
+Views/AppResultRow.swift
+docs/SPEC.md
+docs/CONTRIBUTING.md
+
+❌ WRONG:
+docs/AppError.swift                    # Swift files don't belong in docs/
+ModelsAppError.swift                   # Don't prefix with folder name
+ViewsContentView.swift                 # Don't prefix with folder name
+AppError.swift (in root)               # Should be in Models/ folder
+ContentView.swift (in root)            # Should be in Views/ folder
+```
+
+### Quick Reference
+- **Models, Services, ViewModels** → `Models/` folder
+- **SwiftUI Views** → `Views/` folder  
+- **Documentation (*.md)** → `docs/` folder
+- **Tests** → Test target (separate from main app)
 
 ---
 
@@ -41,18 +73,22 @@ final class MyViewModel: ObservableObject {
 
 ### File Creation Checklist
 When creating new Swift files:
-1. ✅ Add all required imports (see CONTRIBUTING.md table)
-2. ✅ Build project immediately (`Cmd+B`)
-3. ✅ Fix any scope/import errors before proceeding
-4. ✅ Verify file appears in Xcode project navigator
-5. ✅ Check target membership in file inspector
-6. ✅ Add tests if applicable
-7. ✅ Run tests (`Cmd+U`)
+1. ✅ **Verify correct folder** (`Models/` or `Views/`, NEVER `docs/`)
+2. ✅ **Use simple file name** (`AppError.swift`, NOT `ModelsAppError.swift`)
+3. ✅ Add all required imports (see CONTRIBUTING.md table)
+4. ✅ Build project immediately (`Cmd+B`)
+5. ✅ Fix any scope/import errors before proceeding
+6. ✅ Verify file appears in Xcode project navigator
+7. ✅ Check target membership in file inspector
+8. ✅ Add tests if applicable
+9. ✅ Run tests (`Cmd+U`)
 
 ### Common Pitfalls & Solutions
 
 | Pitfall | Detection | Fix |
 |---------|-----------|-----|
+| **Swift files in docs/** | File path starts with `docs/` | Move to `Models/` or `Views/` |
+| **Prefixed file names** | Name like `ModelsAppError.swift` | Rename to `AppError.swift` and move to `Models/` |
 | Missing Combine import | `ObservableObject` conformance error | Add `import Combine` |
 | File not in target | `Cannot find type in scope` | Add file to app target in Xcode |
 | Wrong import order | Various compilation errors | Follow: Foundation → SwiftUI → Combine |
