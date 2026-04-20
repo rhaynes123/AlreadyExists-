@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553B3D9E2F959EE000A8DA0D /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 553B3D9D2F959EDD00A8DA0D /* CHANGELOG.md */; };
+		553B3DBA2F95A8F200A8DA0D /* BUILD_VERIFICATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 553B3DB92F95A8F200A8DA0D /* BUILD_VERIFICATION.md */; };
+		553B3DBC2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md in Resources */ = {isa = PBXBuildFile; fileRef = 553B3DBB2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md */; };
 		55C6B3702F9471300021FDF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55C6B36F2F9471300021FDF9 /* README.md */; };
 		55C6B3722F9471510021FDF9 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 55C6B3712F9471430021FDF9 /* CONTRIBUTING.md */; };
 		55C6B3742F9472EF0021FDF9 /* AGENTS.md in Resources */ = {isa = PBXBuildFile; fileRef = 55C6B3732F9472E50021FDF9 /* AGENTS.md */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		553B3D9D2F959EDD00A8DA0D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		553B3DB92F95A8F200A8DA0D /* BUILD_VERIFICATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BUILD_VERIFICATION.md; sourceTree = "<group>"; };
+		553B3DBB2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DOCS_UPDATES_SUMMARY.md; sourceTree = "<group>"; };
 		55C6B3452F94710C0021FDF9 /* AlreadyExists?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlreadyExists?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C6B3522F94710F0021FDF9 /* AlreadyExists?Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AlreadyExists?Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C6B35C2F94710F0021FDF9 /* AlreadyExists?UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AlreadyExists?UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +95,7 @@
 		55C6B33C2F94710C0021FDF9 = {
 			isa = PBXGroup;
 			children = (
+				553B3D9D2F959EDD00A8DA0D /* CHANGELOG.md */,
 				55C6B37D2F9476C50021FDF9 /* docs */,
 				55C6B3732F9472E50021FDF9 /* AGENTS.md */,
 				55C6B3712F9471430021FDF9 /* CONTRIBUTING.md */,
@@ -97,6 +104,8 @@
 				55C6B3552F94710F0021FDF9 /* AlreadyExists?Tests */,
 				55C6B35F2F94710F0021FDF9 /* AlreadyExists?UITests */,
 				55C6B3462F94710C0021FDF9 /* Products */,
+				553B3DB92F95A8F200A8DA0D /* BUILD_VERIFICATION.md */,
+				553B3DBB2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C6B3702F9471300021FDF9 /* README.md in Resources */,
+				553B3DBC2F95A93F00A8DA0D /* DOCS_UPDATES_SUMMARY.md in Resources */,
+				553B3DBA2F95A8F200A8DA0D /* BUILD_VERIFICATION.md in Resources */,
 				55C6B3742F9472EF0021FDF9 /* AGENTS.md in Resources */,
 				55C6B3722F9471510021FDF9 /* CONTRIBUTING.md in Resources */,
 			);
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553B3D9E2F959EE000A8DA0D /* CHANGELOG.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

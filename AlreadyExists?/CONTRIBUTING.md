@@ -56,3 +56,71 @@ AlreadyExists?/
 - Use SwiftTesting only — no third-party test frameworks
 - Tests must pass before any PR is considered complete
 - AAA pattern: Arrange / Act / Assert, one assertion concept per test
+---
+
+## Build Verification Checklist
+
+### Before Committing Code
+Run these checks to catch build errors early:
+
+1. **Build the Project** (`Cmd+B`)
+   - Fix all compiler errors and warnings
+   - Zero warnings policy for new code
+
+2. **Run All Tests** (`Cmd+U`)
+   - All tests must pass
+   - Check test coverage for new code
+
+3. **Common Import Issues**
+   - SwiftUI ViewModels using `@Published` MUST import `Combine`
+   - Foundation types like `URLSession` MUST import `Foundation`
+   - SwiftUI views MUST import `SwiftUI`
+   
+4. **Target Membership**
+   - New files must be added to the correct Xcode target
+   - Check file inspector to ensure app target is selected
+   - Test files must be in test target only
+
+5. **Dependency Check**
+   - If Type X uses Type Y, both must be in same target or Y must be in framework
+   - Protocol conformances require all necessary imports
+
+### Required Imports by File Type
+
+| File Type | Required Imports |
+|-----------|-----------------|
+| SwiftUI View | `import SwiftUI` |
+| ViewModel with @Published | `import Foundation`, `import SwiftUI`, `import Combine` |
+| Model (Codable) | `import Foundation` |
+| Service (URLSession) | `import Foundation` |
+| Tests | `import Testing`, `@testable import AlreadyExists_` |
+
+### Automated Checks (Pre-commit)
+Before pushing code, verify:
+```bash
+# Build succeeds
+xcodebuild -scheme "AlreadyExists?" -destination 'platform=iOS Simulator,name=iPhone 15' build
+
+# Tests pass
+xcodebuild -scheme "AlreadyExists?" -destination 'platform=iOS Simulator,name=iPhone 15' test
+```
+
+### Common Build Errors & Fixes
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `Type does not conform to ObservableObject` | Missing `Combine` import | Add `import Combine` to ViewModel |
+| `Cannot find [Type] in scope` | File not in target or missing import | Check target membership in Xcode |
+| `Initializer 'init(wrappedValue:)' not available` | Missing module import | Add required framework import |
+| `No such module` | Framework not linked | Add framework in Build Phases |
+| `Use of undeclared type` | Missing import or typo | Verify type name and import statement |
+
+### New File Checklist
+When adding a new Swift file:
+- [ ] File added to correct target (App or Tests)
+- [ ] All required imports present
+- [ ] File compiles individually (`Cmd+B`)
+- [ ] Preview works (for SwiftUI views)
+- [ ] Tests added (for Models/ViewModels)
+- [ ] No warnings generated
+
